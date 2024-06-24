@@ -1,0 +1,148 @@
+.videoContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 160px;
+    overflow: hidden;
+    font-size: 35px;
+    line-height: 40px;
+    color: #ecf0f1;
+    z-index: 3;
+}
+
+.contentContainer {
+    font-weight: 600;
+    overflow: hidden;
+    height: 40px;
+    padding: 0 40px;
+    position: relative;
+}
+
+.contentContainer::before {
+    content: '[';
+    left: 0;
+    color: #ffffff;
+    font-size: 42px;
+    line-height: 40px;
+    position: absolute;
+    top: 0;
+    animation: opacity 2s infinite;
+}
+
+.contentContainer::after {
+    content: ']';
+    right: 0;
+    color: #ffffff;
+    font-size: 42px;
+    line-height: 40px;
+    position: absolute;
+    top: 0;
+    animation: opacity 2s infinite;
+}
+
+.contentText {
+    display: inline;
+    float: left;
+    margin: 0;
+}
+
+.contentList {
+    margin-top: 0;
+    padding-left: 360px;
+    width: max-content;
+    text-align: left;
+    list-style: none;
+    animation: change 6s infinite;
+}
+
+.contentListItem {
+    line-height: 40px;
+    margin: 0;
+}
+
+.footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: #ecf0f1;
+    z-index: 3;
+}
+
+.githubButton {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: #ecf0f1;
+    background-color: #072507;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.githubButton:hover {
+    background-color: #0a350a;
+}
+
+@keyframes opacity {
+    0%, 100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes change {
+    0%, 14.28% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    28.56%, 42.84% {
+        transform: translate3d(0, -34%, 0);
+    }
+
+    57.12%, 71.4% {
+        transform: translate3d(0, -67%, 0);
+    }
+
+}
